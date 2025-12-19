@@ -76,13 +76,3 @@ client.create_run_from_pipeline_func(jma_pipeline, arguments={})
 
 
 # In[15]:
-
-
-pwd
-
-
-# In[ ]:
-
-
-
-
