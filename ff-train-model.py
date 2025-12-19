@@ -34,8 +34,8 @@ X_train.shape, X_test.shape
 
 
 knn = KNeighborsRegressor()
-knn.fit(X_train_scaled, y_train)
-knn_pred = knn.predict(X_test_scaled)
+knn.fit(X_train, y_train)
+knn_pred = knn.predict(X_test)
 mae = mean_absolute_error(y_test, knn_pred)
 r2 = r2_score(y_test, knn_pred)
 
@@ -44,10 +44,8 @@ print("K_Neighbours Regressor")
 print ("R2 Score value: {:.4f}".format(r2))
 print ("MAE value: {:.4f}".format(mae))
 
-
-
 mlflow.log_metric("explained_variance",r2)
 mlflow.log_metric("mae",mae)
 
 
-joblib.dump(lreg, "/mnt/result/model.joblib")
+joblib.dump(knn, "/mnt/result/model.joblib")
